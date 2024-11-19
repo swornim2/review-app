@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { User, Review } from '../../types/types';
+import React from 'react';
 
 interface MyReviewProps {
   user: User;

@@ -9,9 +9,38 @@
   padding: 2rem;
 }
 
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-container {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .main-content {
     margin-left: 4rem;
     padding: 1rem;
+  }
+
+  .content-wrapper {
+    gap: 1rem;
+  }
+
+  .card-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    margin-left: 0;
   }
 }

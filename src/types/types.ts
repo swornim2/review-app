@@ -16,21 +16,21 @@ export interface ReviewCycle {
   id: string;
   name: string;
   completion: number;
-  status: 'active' | 'completed';
+  status: "active" | "completed";
   department: string;
 }
 
 export interface PeerNomination {
   id: string;
   peer: User;
-  requestStatus: 'accepted' | 'rejected' | 'pending';
-  reviewStatus: 'completed' | 'pending';
+  requestStatus: "accepted" | "rejected" | "pending";
+  reviewStatus: "completed" | "pending";
 }
 
 export interface ReviewRequest {
   id: string;
   from: User;
-  status: 'accepted' | 'rejected' | 'pending';
+  status: "accepted" | "rejected" | "pending";
   dueDate: Date;
 }
 
@@ -40,7 +40,7 @@ export interface Review {
   reviewee: User;
   content: string;
   rating: number;
-  status: 'completed' | 'pending';
+  status: "completed" | "pending";
   createdAt: Date;
 }
 

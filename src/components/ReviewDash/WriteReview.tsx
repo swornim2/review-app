@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ReviewRequest, Review } from '../../types/types';
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import React from 'react';
 
 interface WriteReviewProps {
   requests: ReviewRequest[];

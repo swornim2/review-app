@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { PeerReview } from './PeerReview';
-import { WriteReview } from './WriteReview';
-import { MyReview } from './MyReview';
-import { User, PeerNomination, ReviewRequest, Review } from '../../types/types';
-import './ReviewDash.css';
+import { useState } from "react";
+import { PeerReview } from "./PeerReview";
+import { WriteReview } from "./WriteReview";
+import { MyReview } from "./MyReview";
+import { User, PeerNomination, ReviewRequest, Review } from "../../types/types";
+import "./ReviewDash.css";
+import React from "react";
 
 interface ReviewDashProps {
   user: User;
@@ -16,7 +17,7 @@ interface ReviewDashProps {
   onSubmitReview: (review: Partial<Review>) => void;
 }
 
-type TabType = 'peer' | 'write' | 'my';
+type TabType = "peer" | "write" | "my";
 
 export const ReviewDash = ({
   user,
@@ -28,12 +29,12 @@ export const ReviewDash = ({
   onRejectReview,
   onSubmitReview,
 }: ReviewDashProps) => {
-  const [activeTab, setActiveTab] = useState<TabType>('peer');
+  const [activeTab, setActiveTab] = useState<TabType>("peer");
 
   const tabs = [
-    { id: 'peer', label: 'Peer Nominations' },
-    { id: 'write', label: 'Write Reviews' },
-    { id: 'my', label: 'My Review' },
+    { id: "peer", label: "Peer Nominations" },
+    { id: "write", label: "Write Reviews" },
+    { id: "my", label: "My Review" },
   ];
 
   return (
@@ -42,7 +43,7 @@ export const ReviewDash = ({
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+            className={`tab-button ${activeTab === tab.id ? "active" : ""}`}
             onClick={() => setActiveTab(tab.id as TabType)}
           >
             {tab.label}
@@ -51,13 +52,10 @@ export const ReviewDash = ({
       </div>
 
       <div className="tab-content">
-        {activeTab === 'peer' && (
-          <PeerReview
-            nominations={peerNominations}
-            onAddPeer={onAddPeer}
-          />
+        {activeTab === "peer" && (
+          <PeerReview nominations={peerNominations} onAddPeer={onAddPeer} />
         )}
-        {activeTab === 'write' && (
+        {activeTab === "write" && (
           <WriteReview
             requests={reviewRequests}
             onAccept={onAcceptReview}
@@ -65,7 +63,7 @@ export const ReviewDash = ({
             onSubmit={onSubmitReview}
           />
         )}
-        {activeTab === 'my' && (
+        {activeTab === "my" && (
           <MyReview
             user={user}
             reviews={reviews}
